@@ -1,0 +1,167 @@
+html, body {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 20px;
+    background-color: #eef6f4;
+    margin: 0;
+    padding: 0;
+    color: #252525;
+}
+
+/* General Typography Selectors */
+h1, h2, h3, p {
+    margin: 0;
+}
+
+a {
+    color: #4f4c7b;
+}
+
+a:hover, 
+a:focus {
+    color: #252525;
+}
+
+span {
+    font-weight: 700;
+}
+
+/* Header Section */
+header {
+    padding: 35px 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo, 
+#user-avatar {
+    height: 80px;
+}
+
+#user-avatar {
+    border-radius: 50%;
+}
+
+/* Main Section - Layout */
+main {
+    padding: 85px 60px 150px 60px;
+}
+
+/* Mini Intro Section - Typography*/
+.mini-intro-section h1 {
+    margin-bottom: 10px;
+    font-size: 45px;
+}
+
+.mini-intro-section p {
+    font-size: 25px;
+}
+
+/* Mini Intro Section - Layout */
+.mini-intro-section {
+    padding: 0 0 15px 0;
+}
+
+/* Posts Section - Typography */
+.name {
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+
+.location {
+    font-size: 18px;
+}
+
+.likes {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 11px;
+}
+
+.comment {
+    font-size: 20px;
+}
+
+/* Posts Section - Layout */
+.posts-container {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.single-post-container {
+    width: 360px;
+    background: #fff;
+    margin-top: 40px;
+    border-radius: 8px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.single-post-container:hover,
+.single-post-container:focus {
+    transform: scale(1.01);
+    box-shadow: 5px 5px 20px #cce0de;
+    cursor: pointer;
+}
+
+.single-post-container:active {
+    transform: scale(1.03);
+}
+
+.post-header {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 40px 15px 15px 15px;
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.post-img {
+    width: 100%;
+    height: 360px;
+}
+
+.icon {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: transform .2s;
+}
+
+.icon:hover,
+.icon:focus {
+    opacity: .5;
+    transform: scale(1.1);
+}
+
+.icon:active {
+    transform: scale(0.9);
+}
+
+.post-footer {
+    padding: 15px 15px 40px 15px;
+}
+
+/* site footer section - different from post footer */
+footer p {
+    color: #4a5552;
+}
+
+.divider-line {
+    height: 3px;
+    margin-bottom: 60px;
+    background-color: #dfecea;
+}
+
+footer {
+    text-align: center;
+    padding: 60px 0;
+}
