@@ -4,7 +4,7 @@
 - Languages: JavaScript, CSS, and HTML
 - Check out my app at <a href="https://oldagram-exist888.netlify.app/">__oldagram-exist888.netlify.app__</a>
 
-<img src="https://github.com/user-attachments/assets/8e9f700f-7dbe-4259-82a7-3d900d41af55" alt="Project Hero Image" width="620">
+<img src="https://github.com/user-attachments/assets/63570865-448c-4f6c-9084-fb9dc318eb15" alt="Project Hero Image" width="620">
 <br/>
 
 ## __Skills Applied__
