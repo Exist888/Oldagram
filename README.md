@@ -11,7 +11,7 @@
 - Uses For Loop and innerHTML to iterate through array of object and populate page with artists' posts
 - Implementing "innerHTML", "textContent", and "querySelector" to manipulate the DOM and alter html content 
 - Using increment operator to add newly generated posts until posts reach length of array
-- Translating Figma design file into CSS code to mirror given visual design, for top section of web page
+- Translating Figma design file into CSS code to mirror given visual design
 <br/> <br/>
 
 ##
