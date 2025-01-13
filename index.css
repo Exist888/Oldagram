@@ -92,10 +92,12 @@ main {
 
 .single-post-container {
     width: 360px;
+    min-width: 320px;
     background: #fff;
     margin-top: 40px;
     border-radius: 8px;
-    transition: transform .2s, box-shadow .2s;
+    transition: transform .2s ease-out, box-shadow .2s ease-out;
+    position: relative;
 }
 
 .single-post-container:hover,
@@ -103,10 +105,6 @@ main {
     transform: scale(1.01);
     box-shadow: 5px 5px 20px #cce0de;
     cursor: pointer;
-}
-
-.single-post-container:active {
-    transform: scale(1.03);
 }
 
 .post-header {
@@ -133,7 +131,7 @@ main {
     width: 25px;
     margin-right: 5px;
     margin-bottom: 15px;
-    transition: transform .2s;
+    transition: transform .2s ease-out;
 }
 
 .icon:hover,
@@ -150,6 +148,36 @@ main {
     padding: 15px 15px 40px 15px;
 }
 
+.heart-plus-one-icon {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity .5s ease-out, transform .5s ease-out;
+}
+
+.heart-plus-one-icon.show {
+    opacity: 1;
+    transform: translate(-10%, 10%) scale(1.5);
+    animation: heartAnimation 1.5s forwards;
+}
+
+@keyframes heartAnimation {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0);
+    }
+    75% {
+        transform: translate(-10%, -10%) scale(1.5);
+    }
+    100% {
+        transform: translate(-10%, -10%) scale(0);
+    }
+}
+
 /* site footer section - different from post footer */
 footer p {
     color: #4a5552;
@@ -164,4 +192,14 @@ footer p {
 footer {
     text-align: center;
     padding: 60px 0;
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 25px 15px;
+    }
+    
+    main {
+        padding: 55px 15px;
+    }
 }

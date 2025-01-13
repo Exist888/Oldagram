@@ -45,42 +45,58 @@ function renderPosts() {
                 <img class="post-img" src="${posts[i].post}" alt="painting by the artist posting">
                 <div class="post-footer">
                     <div class="icons">
-                        <img class="icon" id="heart-icon" src="images/icon-heart.png" alt="heart">
-                        <img class="icon" id="comment-icon" src="images/icon-comment.png" alt="comment">
-                        <img class="icon" id="dm-icon" src="images/icon-dm.png" alt="direct message">
+                        <img class="icon heart-icon" data-index="${i}" src="images/icon-heart.png" alt="heart">
+                        <img class="icon comment-icon" src="images/icon-comment.png" alt="comment">
+                        <img class="icon dm-icon" src="images/icon-dm.png" alt="direct message">
                     </div>
                     <h3 class="likes">${posts[i].likes} likes</h3>
                     <p class="comment"><span class="username">${posts[i].username}</span> 
                     ${posts[i].comment}</p>
+                    <img class="heart-plus-one-icon" src="images/heart-plus-one.png" alt="plus one like"> 
                 </div>
             </div>
         `
     }
 }
 
-function postClickEventListener() {
-    const clickablePosts = document.querySelectorAll(".single-post-container");
+function addClickEventListener(targetClass, eventType) {
+    const clickableElements = document.querySelectorAll(targetClass);
     
-    clickablePosts.forEach(clickablePost => {
-        clickablePost.addEventListener("click", function() {
-            const postIndex = parseInt(clickablePost.getAttribute("data-index"));
-            boostLikes(postIndex);
-        })
-    })
+    clickableElements.forEach(clickableElement => {
+        clickableElement.addEventListener(eventType, function() {
+            const index = parseInt(clickableElement.getAttribute("data-index"));
+            boostLikes(index);
+            
+            if (eventType === "dblclick") {
+                showHeartPlusOne(clickableElement);
+            }
+        });
+    });
 }
 
-function boostLikes(postIndex) {
-    posts[postIndex].likes += 1;
+function showHeartPlusOne(doubleClickedElement) {
+    const heartPlusOneIcon = doubleClickedElement.querySelector(".heart-plus-one-icon");
     
-    const postElement = document.querySelector(`[data-index="${postIndex}"]`);
+    heartPlusOneIcon.classList.add("show");
+    
+    setTimeout(() => {
+        heartPlusOneIcon.classList.remove("show");
+    }, 1500);
+}
+
+function boostLikes(index) {
+    posts[index].likes += 1;
+    
+    const postElement = document.querySelector(`[data-index="${index}"]`);
     const likesElement = postElement.querySelector(".likes");
     
-    likesElement.textContent = `${posts[postIndex].likes} likes`;
+    likesElement.textContent = `${posts[index].likes} likes`;
 }
 
 function init() {
     renderPosts();
-    postClickEventListener();
+    addClickEventListener(".single-post-container", "dblclick");
+    addClickEventListener(".heart-icon", "click");
 }
 
 init();

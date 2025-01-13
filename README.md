@@ -8,9 +8,10 @@
 <br/>
 
 ## __Skills Applied__
-- Uses For Loop and innerHTML to iterate through array of object and populate page with artists' posts
+- Using For Loop and innerHTML to iterate through array of objects and populate page with artists' posts
 - Implementing "innerHTML", "textContent", and "querySelector" to manipulate the DOM and alter html content 
 - Using increment operator to add newly generated posts until posts reach length of array
+- Applying forEach and getAttribute methods to associate like increases with correct posts at correct index points
 - Translating Figma design file into CSS code to mirror given visual design
 <br/> <br/>
 
